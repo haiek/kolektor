@@ -18,6 +18,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 public class MainActivity extends FragmentActivity implements
@@ -142,8 +145,8 @@ public class MainActivity extends FragmentActivity implements
 				return getString(R.string.title_section1).toUpperCase(l);
 			case 1:
 				return getString(R.string.title_section2).toUpperCase(l);
-			case 2:
-				return getString(R.string.title_section3).toUpperCase(l);
+			//case 2:
+				//return getString(R.string.title_section3).toUpperCase(l);
 			}
 			return null;
 		}
@@ -168,11 +171,37 @@ public class MainActivity extends FragmentActivity implements
 				Bundle savedInstanceState) {
 			View rootView = inflater.inflate(R.layout.fragment_main_dummy,
 					container, false);
+			
+			//Find WebView in xml file. Use rootView because its a fragment
+			WebView myWebView = (WebView) rootView.findViewById(R.id.webview);
+			//Setting a new WebViewClient to you webView will let the WebView handle urls internally. Use it when the link opens in the browser
+			myWebView.setWebViewClient(new WebViewClient());
+			WebSettings webSettings = myWebView.getSettings();
+			webSettings.setJavaScriptEnabled(true);
+			
+			//See in what fragment is the user
+			String fragmentNum = Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER));
+			
+			//iniciate url variable and asign value depending on the fragment
+			
+			String url = "";
+			if(fragmentNum.equals("1")) {
+				url = "http://www.google.com";
+			} else if(fragmentNum.equals("2")) {
+				url = "http://www.yahoo.com";
+			}
+			
+			//Load a web page in the WebView
+			myWebView.loadUrl(url);
+			
+			return rootView;
+			/*
 			TextView dummyTextView = (TextView) rootView
 					.findViewById(R.id.section_label);
 			dummyTextView.setText(Integer.toString(getArguments().getInt(
 					ARG_SECTION_NUMBER)));
 			return rootView;
+			*/
 		}
 	}
 
