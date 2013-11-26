@@ -14,6 +14,7 @@ import android.support.v4.view.ViewPager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -81,7 +82,9 @@ public class MainActivity extends FragmentActivity implements
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+		 MenuInflater inflater = getMenuInflater();
+		//locate the main_activity_actions.xml in res/menu for adding actions to the action bar
+	    inflater.inflate(R.menu.main_activity_actions, menu);
 		return true;
 	}
 
