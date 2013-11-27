@@ -1,1 +1,84 @@
-/* CSS GOES HERE */
+html{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+/* ------- GENERAL ------- */
+
+.wrapper{
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background: #ffffff;
+}
+
+.navTab{
+	width: 100%;
+	height: 7.7464789%;
+	background: #edb9a2;
+}
+
+.player{
+	width: 85%;
+	height: 47.8873239%;
+	margin: 7.5% auto 7.5% auto;
+	border-radius: 50%;
+	background: red;
+}
+
+.nextShow{
+	width: 100%;
+	height: 23.5035211%;
+	margin: 0 auto;
+	background: #e5e5e5;
+	overflow: auto;
+}
+
+.nextShow .holder{
+	width: 76.875%;
+	height: 77.9026217%;
+	margin: 4.6875% auto;
+	overflow: auto;
+}
+
+.nextShow .left{
+	width: 57.7235772%;
+	height: 100%;
+	float: left;
+}
+
+.nextShow .right{
+	width: 42.2764228%;
+	height: 100%;
+	background: purple;
+	border-radius: 50%;
+	float: right;
+}
+
+#metaData{
+	width: 100%;
+	height: 12.1478873%;
+	background: #000000;
+	overflow: auto;
+}
+
+#metaText{
+	width: 78.75%;
+	height: 100%;
+	float: left;
+}
+
+#metaShare{
+	width: 21.25%;
+	height: 100%;
+	float: right;
+}
