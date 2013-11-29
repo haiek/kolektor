@@ -14,13 +14,13 @@ body{
 
 
 /* (iPhone 2G - 4S = PORTRAIT) */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait)  {
+@media only screen and (min-width : 320px) and (max-width : 480px)  {
 
 	/* --- RADIO VIEW --- */
 	.wrapper{
 		width: 320px;
 		height: 480px;
-		background: yellow;
+		background: white;
 	}
 
 	.navTab{
@@ -30,8 +30,8 @@ body{
 	}
 
 	.player{
-		width: 272px;
-		height: 272px;
+		width: 204px;
+		height: 204px;
 		border-radius: 50%;
 		margin: 24px auto 24px auto;
 		background: red;
