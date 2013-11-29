@@ -128,7 +128,7 @@ body{
 }
 
 /* (Nexus 4 webview = PORTRAIT) and (Desktop) */
-@media (min-width: 768px) and (min-height : 979px) {
+@media (min-width: 768px) and (max-height : 979px) {
 
 	/* --- RADIO VIEW --- */
 	.wrapper{
@@ -172,7 +172,6 @@ body{
 		width: 768px;
 		height: 1024px;
 		background: blue;
-		margin: 0px auto;
 	}
 
 	.navTab{
