@@ -106,8 +106,8 @@ body{
 	}
 
 	.player{
-		width: 272px;
-		height: 272px;
+		width: 448px;
+		height: 448px;
 		border-radius: 50%;
 		margin: 24px auto 24px auto;
 		background: red;
@@ -115,13 +115,13 @@ body{
 
 	.nextShow{
 		width: 100%;
-		height: 116px;
+		height: 150px;
 		background: #e5e5e5;
 	}
 
 	#metaData{
 		width: 100%;
-		height: 68px;
+		height: 90px;
 		background: black;
 	}
 
@@ -170,13 +170,15 @@ body{
 	/* --- RADIO VIEW --- */
 	.wrapper{
 		width: 768px;
-		height: 979px;
+		height: 1024px;
 		background: blue;
 		margin: 0px auto;
 	}
 
 	.navTab{
-		display: none;
+		width: 100%;
+		height: 44px;
+		background: #edb9a2;
 	}
 
 	.player{
