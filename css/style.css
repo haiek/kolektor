@@ -171,18 +171,18 @@ body{
 	.wrapper{
 		width: 768px;
 		height: 1024px;
-		background: blue;
+		background: white;
 	}
 
 	.navTab{
 		width: 100%;
-		height: 44px;
+		height: 88px;
 		background: #edb9a2;
 	}
 
 	.player{
-		width: 500px;
-		height: 500px;
+		width: 430px;
+		height: 430px;
 		border-radius: 50%;
 		margin: 75px auto 75px auto;
 		background: red;
@@ -190,13 +190,13 @@ body{
 
 	.nextShow{
 		width: 100%;
-		height: 232px;
+		height: 210px;
 		background: #e5e5e5;
 	}
 
 	#metaData{
 		width: 100%;
-		height: 68px;
+		height: 127px;
 		background: black;
 	}
 
