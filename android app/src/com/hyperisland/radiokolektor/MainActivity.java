@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -127,7 +128,7 @@ public class MainActivity extends FragmentActivity {
 					container, false);
 			
 			//Find WebView in xml file. Use rootView because its a fragment
-			WebView myWebView = (WebView) rootView.findViewById(R.id.webview);
+			final WebView myWebView = (WebView) rootView.findViewById(R.id.webview);
 			//Setting a new WebViewClient to you webView will let the WebView handle urls internally. Use it when the link opens in the browser
 			myWebView.setWebViewClient(new WebViewClient());
 			WebSettings webSettings = myWebView.getSettings();
@@ -140,13 +141,22 @@ public class MainActivity extends FragmentActivity {
 			
 			String url = "";
 			if(fragmentNum.equals("1")) {
-				url = "http://www.google.com";
+				url = "http://172.16.3.123:8888/kolektor";
 			} else if(fragmentNum.equals("2")) {
-				url = "http://www.yahoo.com";
+				url = "http://www.google.com";
 			}
 			
 			//Load a web page in the WebView
 			myWebView.loadUrl(url);
+			
+			myWebView.setWebViewClient(new WebViewClient() {
+	            @Override
+	            public void onPageFinished(WebView webView, String url) {
+	                super.onPageFinished(webView, url);
+	                Log.i("**************TAG", Integer.toString(myWebView.getWidth()));
+	                Log.i("**************TAG", Integer.toString(myWebView.getHeight()));
+	            }
+	        });
 			
 			return rootView;
 		}
