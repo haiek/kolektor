@@ -1,8 +1,11 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
 html{
 	width: 100%;
 	height: 100%;
 	margin: 0;
 	padding: 0;
+	font-family: Arial;
 }
 
 body{
@@ -12,14 +15,39 @@ body{
 	padding: 0;
 }
 
+h1{
+	margin: 0;
+	padding: 0;
+	font-family: 'Oswald', sans-serif;
+}
+
+p{
+	margin: 0;
+	padding: 0;
+	font-family: Arial;
+}
+
+span{
+	margin: 0;
+	padding: 0;
+}
+
 
 /* (iPhone 2G - 4S = PORTRAIT) */
-@media only screen and (min-width : 320px) and (min-height : 480px) {
+@media only screen and (min-width : 320px) and (min-height : 460px) {
+
+	h1{
+		font-size: 23px;
+	}
+
+	p{
+		font-size: 16px;
+	}
 
 	/* --- RADIO VIEW --- */
 	.wrapper{
 		width: 320px;
-		height: 480px;
+		height: 460px;
 		background: white;
 	}
 
@@ -30,17 +58,60 @@ body{
 	}
 
 	.player{
-		width: 194px;
-		height: 194px;
+		width: 202px;
+		height: 202px;
 		border-radius: 50%;
-		margin: 24px auto 24px auto;
-		background: red;
-	}
+		margin: 15px auto 15px auto;
+		background: url('http://i.imgur.com/Zb9MgJi.png') no-repeat center center;
+		-webkit-background-size: cover;
+  		-moz-background-size: cover;
+  		-o-background-size: cover;
+  		background-size: cover;
+  	}
 
 	.nextShow{
 		width: 100%;
 		height: 106px;
 		background: #e5e5e5;
+		padding: 10px 0 0 0;
+	}
+
+	.nextShow .holder{
+		width: 246px;
+		height: 96px;
+		margin: 0px auto;
+	}
+
+	.nextShow .holder .left{
+		width: 140px;
+		height: 96px;
+		padding: 0 10px 0 0;
+		float: left;
+	}
+
+	.nextShow .holder .left p{
+		padding-bottom: 16px;
+	}
+
+
+	.nextShow .holder .left span{
+		padding: 8px;
+		margin: 6px 0 0 0;
+		background: black;
+		color: white;
+	}
+
+	.nextShow .holder .right{
+		width: 96px;
+		height: 96px;
+		background: blue;
+		border-radius: 50%;
+		float: right;
+		background: url('http://i.imgur.com/buMOjcx.png') no-repeat center center;
+		-webkit-background-size: cover;
+  		-moz-background-size: cover;
+  		-o-background-size: cover;
+  		background-size: cover;
 	}
 
 	#metaData{
@@ -49,10 +120,38 @@ body{
 		background: black;
 	}
 
+	#metaData #metaText{
+		width: 222px;
+		height: 38px;
+		float: left;
+		padding: 15px;
+		color: white;
+	}
+
+	#metaData #metaShare{
+		width: 68px;
+		height: 68px;
+		float: right;
+	}
+
+	audio{
+		margin: 88px 0 0 25px;
+	}
+
 }
 
 /* (iPhone 5 = PORTRAIT) */
-@media only screen and (min-width : 320px) and (min-height : 568px) {
+@media only screen and (min-width : 320px) and (min-height : 548px) {
+
+	/* FONTS */
+
+	h1{
+		font-size: 22px;
+	}
+
+	p{
+		font-size: 16px;
+	}
 
 	/* --- RADIO VIEW --- */
 	.wrapper{
@@ -72,19 +171,80 @@ body{
 		height: 272px;
 		border-radius: 50%;
 		margin: 24px auto 24px auto;
-		background: red;
+		background: url('http://i.imgur.com/Zb9MgJi.png') no-repeat center center;
+		-webkit-background-size: cover;
+  		-moz-background-size: cover;
+  		-o-background-size: cover;
+  		background-size: cover;
 	}
 
 	.nextShow{
 		width: 100%;
-		height: 116px;
+		height: 106px;
 		background: #e5e5e5;
+		padding: 10px 0 0 0;
+	}
+
+	.nextShow .holder{
+		width: 246px;
+		height: 96px;
+		margin: 0px auto;
+	}
+
+	.nextShow .holder .left{
+		width: 140px;
+		height: 96px;
+		padding: 0px 10px 0 0;
+		float: left;
+	}
+
+	.nextShow .holder .left p{
+		padding-bottom: 11px;
+	}
+
+
+	.nextShow .holder .left span{
+		padding: 8px;
+		margin: 4px 0 0 0;
+		background: black;
+		color: white;
+	}
+
+	.nextShow .holder .right{
+		width: 96px;
+		height: 96px;
+		background: blue;
+		border-radius: 50%;
+		float: right;
+		background: url('http://i.imgur.com/buMOjcx.png') no-repeat center center;
+		-webkit-background-size: cover;
+  		-moz-background-size: cover;
+  		-o-background-size: cover;
+  		background-size: cover;
 	}
 
 	#metaData{
 		width: 100%;
 		height: 68px;
 		background: black;
+	}
+
+	#metaData #metaText{
+		width: 222px;
+		height: 38px;
+		float: left;
+		padding: 15px;
+		color: white;
+	}
+
+	#metaData #metaShare{
+		width: 68px;
+		height: 68px;
+		float: right;
+	}
+
+	audio{
+		margin: 120px 0 0 38px;
 	}
 
 }
@@ -128,12 +288,11 @@ body{
 }
 
 /* (Nexus 4 webview = PORTRAIT) and (Desktop) */
-@media (min-width: 768px) and (max-height : 979px) {
+@media only screen and (min-width : 384px) {
 
 	/* --- RADIO VIEW --- */
 	.wrapper{
-		width: 768px;
-		height: 979px;
+		width: 384px;
 		background: white;
 		margin: 0px auto;
 	}
@@ -143,22 +302,22 @@ body{
 	}
 
 	.player{
-		width: 500px;
-		height: 500px;
+		width: 250px;
+		height: 250px;
 		border-radius: 50%;
-		margin: 75px auto 75px auto;
+		margin: 35px auto 35px auto;
 		background: red;
 	}
 
 	.nextShow{
 		width: 100%;
-		height: 232px;
+		height: 116px;
 		background: #e5e5e5;
 	}
 
 	#metaData{
 		width: 100%;
-		height: 68px;
+		height: 34px;
 		background: black;
 	}
 
