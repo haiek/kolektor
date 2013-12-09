@@ -32,6 +32,20 @@ span{
 	padding: 0;
 }
 
+ul{
+	margin: 0;
+	padding: 0;
+}
+
+li{
+	margin: 0;
+	padding: 0;
+}
+
+input:focus {
+	outline:none;
+}
+
 
 /* (iPhone 2G - 4S = PORTRAIT) */
 @media only screen and (min-width : 320px) and (min-height : 460px) {
@@ -51,10 +65,28 @@ span{
 		background: white;
 	}
 
-	.navTab{
+	.topNavigation{
 		width: 100%;
 		height: 44px;
 		background: #edb9a2;
+	}
+
+	.topNavigation ul{
+		width: 320px;
+		height: 44px;
+	}
+
+	.topNavigation ul li{
+		width: 160px;
+		height: 44px;
+	}
+
+	.topNavigation ul li:first-child{
+		float: left;
+	}
+
+	.topNavigation ul li:last-child{
+		float: right;
 	}
 
 	.player{
@@ -141,7 +173,7 @@ span{
 }
 
 /* (iPhone 5 = PORTRAIT) */
-@media only screen and (min-width : 320px) and (min-height : 548px) {
+@media only screen and (min-width : 320px) {
 
 	/* FONTS */
 
@@ -154,16 +186,61 @@ span{
 	}
 
 	/* --- RADIO VIEW --- */
+
 	.wrapper{
 		width: 320px;
-		height: 548px;
 		background: white;
 	}
 
-	.navTab{
+	.topNavigation{
 		width: 100%;
 		height: 44px;
 		background: #edb9a2;
+		list-style: none;
+	}
+
+	.topNavigation ul{
+		width: 320px;
+		height: 44px;
+		font-weight: bold;
+	}
+
+	.topNavigation ul li{
+		height: 44px;
+		text-align: center;
+		list-style: none;
+		line-height: 44px;
+		position: relative;
+	}
+
+	.topNavigation ul li:first-child{
+		float: left;
+		border-right: 1px solid #c79b88;
+		width: 159px;
+	}
+
+	.topNavigation ul li:last-child{
+		float: right;
+		width: 160px;
+	}
+
+	#goToRadio .indicator{
+		width: 142px;
+		height: 6px;
+		background: #ec652a;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
+
+	#goToPodcasts .indicator{
+		width: 142px;
+		height: 6px;
+		background: #ec652a;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		display: none;
 	}
 
 	.player{
@@ -186,13 +263,13 @@ span{
 	}
 
 	.nextShow .holder{
-		width: 246px;
+		width: 226px;
 		height: 96px;
 		margin: 0px auto;
 	}
 
 	.nextShow .holder .left{
-		width: 140px;
+		width: 120px;
 		height: 96px;
 		padding: 0px 10px 0 0;
 		float: left;
@@ -244,7 +321,173 @@ span{
 	}
 
 	audio{
-		margin: 120px 0 0 38px;
+		margin: 128px 0 0 38px;
+	}
+
+	.browseNavigation{
+		width: 208px;
+		height: 44px;
+		margin: 22px auto;
+		background: black;
+	}
+
+	.browseNavigation ul{
+		width: 208px;
+		height: 44px;
+		list-style: none;
+	}
+
+	.browseNavigation ul li{
+		text-align: center;
+		font-size: 16px;
+	}
+
+	.browseNavigation ul li:first-child{
+		width: 104px;
+		height: 44px;
+		float: left;
+		color: white;
+		line-height: 44px;
+	}
+
+	.browseNavigation ul li:last-child{
+		width: 98px;
+		height: 38px;
+		line-height: 38px;
+		float: right;
+		color: black;
+		background: white;
+		border: 3px solid black;
+	}
+
+	.search{
+		width: 320px;
+		height: 55px;
+		margin: 0;
+		padding: 0;
+	}
+
+	.search input[type=text]{
+		width: 288px;
+		height: 23px;
+		padding: 16px;
+		margin: 0;
+		border: none;
+		font-size: 16px;
+		border-top: 1px solid #cfcfcf;
+		-webkit-appearance: none
+    	-webkit-border-radius:0;
+    	-webkit-appearance: caret;
+		-moz-appearance: caret;
+    	border-radius:0;
+	}
+
+	.featured{
+		width: 320px;
+		height: 320px;
+	}
+
+	.featuredImage{
+		width: 160px;
+		height: 160px;
+		float: left;
+	}
+
+	.featuredImage img{
+		width: 144px;
+	}
+
+	.podMenu{
+		width: 320px;
+	}
+
+	.podMenu ul{
+		width: 320px;
+		list-style: none;
+	}
+
+	.podMenu ul li{
+		width: 288px;
+		height: 23px;
+		line-height: 23px;
+		border-bottom: 1px solid #e5e5e5;
+		padding: 16px;
+		font-size: 16px;
+	}
+
+	#wizard{
+		background: #e5e5e5;
+		border-top: 1px solid #cfcfcf;
+		overflow: auto;
+	}
+
+	#wizard ul{
+		list-style: none;
+	}
+
+	#wizard ul li{
+		width: 94px;
+		height: 94px;
+		background: white;
+		-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		border-radius: 6px;
+		margin: 8px 0 8px 0;
+		text-align: center;
+		line-height: 94px;
+		border: 1px solid #d0d0d0;
+	}
+
+	.allMoods{
+		width: 96px;
+		float: left;
+		margin: 0 8px 0 8px;
+	}
+
+	.allFeelings{
+		width: 96px;
+		float: left;
+		margin: 0 8px 0 0;
+	}
+
+	.allLenght{
+		width: 96px;
+		float: left;
+		margin: 0;
+	}
+
+	#categories{
+		background: #e5e5e5;
+		border-top: 1px solid #cfcfcf;
+		overflow: auto;
+	}
+
+	#categories ul{
+		list-style: none;
+	}
+
+	#categories ul li{
+		width: 94px;
+		height: 94px;
+		background: white;
+		-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		border-radius: 6px;
+		margin: 8px 0 0 8px;
+		text-align: center;
+		line-height: 94px;
+		border: 1px solid #d0d0d0;
+		float: left;
+	}
+
+	.resultBoxes{
+		width: 320px;
+		overflow: auto;
+	}
+
+	.podSegment{
+		width: 320px;
+		overflow: auto;
 	}
 
 }
@@ -259,7 +502,7 @@ span{
 		background: white;
 	}
 
-	.navTab{
+	.topNavigation{
 		width: 100%;
 		height: 44px;
 		background: #edb9a2;
@@ -287,42 +530,6 @@ span{
 
 }
 
-/* (Nexus 4 webview = PORTRAIT) and (Desktop) */
-@media only screen and (min-width : 384px) {
-
-	/* --- RADIO VIEW --- */
-	.wrapper{
-		width: 384px;
-		background: white;
-		margin: 0px auto;
-	}
-
-	.navTab{
-		display: none;
-	}
-
-	.player{
-		width: 250px;
-		height: 250px;
-		border-radius: 50%;
-		margin: 35px auto 35px auto;
-		background: red;
-	}
-
-	.nextShow{
-		width: 100%;
-		height: 116px;
-		background: #e5e5e5;
-	}
-
-	#metaData{
-		width: 100%;
-		height: 34px;
-		background: black;
-	}
-
-}
-
 /* (All ipads = PORTRAIT) */
 @media (min-width: 768px) and (min-height : 1024px) {
 
@@ -333,7 +540,7 @@ span{
 		background: white;
 	}
 
-	.navTab{
+	.topNavigation{
 		width: 100%;
 		height: 88px;
 		background: #edb9a2;

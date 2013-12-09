@@ -57,7 +57,7 @@ $(document).ready( function(){
 			  	arrayHolder[count] = item;
 
 			  	//Change the src path of the image and add the border with the color of the category
-			  	$( "#featured" + count + " img" ).attr('src', data[key].cover ).css('border', '10px solid #' + data[key].category_hex);
+			  	$( "#featured" + count + " img" ).attr('src', data[key].cover ).css('border', '8px solid #' + data[key].category_hex);
 				
 			    count++;
 			}
@@ -137,7 +137,7 @@ $(document).ready( function(){
 			  	//$( "#search2" ).attr( "placeholder" , userImput );
 			  	$( "#search2" ).attr( "value" , userImput ).focus();
 			  	//Append the results
-			  	$( "#searchResults .resultsBoxes" ).append( '<div id="searchResults'+data[key].id+'" class="podSegment"><div class="PodSegImg"><img style="border: 10px solid #' + data[key].category_hex +'" src="'+data[key].cover+'" /></div><div class="PodSegTitle">'+data[key].title+'</div><div class="PodSegAuthor">'+data[key].author+'</div><ul><li class="feeling" style="background-color: #'+ data[key].feeling_hex +'">del</li><li class="mood" style="background-color: #'+ data[key].mood_hex +'">del</li><li class="lenght">'+data[key].lenght+'</li></ul></div>' );
+			  	$( "#searchResults .resultsBoxes" ).append( '<div id="searchResults'+data[key].id+'" class="podSegment"><div class="PodSegImg"><img style="border: 5px solid #' + data[key].category_hex +'" src="'+data[key].cover+'" /></div><div class="PodSegTitle">'+data[key].title+'</div><div class="PodSegAuthor">'+data[key].author+'</div><ul><li class="feeling" style="background-color: #'+ data[key].feeling_hex +'">del</li><li class="mood" style="background-color: #'+ data[key].mood_hex +'">del</li><li class="lenght">'+data[key].lenght+'</li></ul></div>' );
 				
 			    count++;
 			}
@@ -633,6 +633,7 @@ $(document).ready( function(){
 
 	$( "#goToBackstage" ).click(function() {
 		showView("backstage");
+		$( ".topNavigation" ).hide();
 	});
 
 	//WORKING

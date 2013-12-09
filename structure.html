@@ -18,7 +18,6 @@
 	    <!-- CSS!-->
 	    <link href="css/style.css" rel="stylesheet" media="screen">
 
-
 	</head>
 
 	<body>
@@ -28,8 +27,8 @@
 		<nav class="topNavigation">
 
 			<ul>
-				<li id="goToRadio">Radio</li>
-				<li id="goToPodcasts">Podcasts</li>
+				<li id="goToRadio">RADIO<div class="indicator"></div></li>
+				<li id="goToPodcasts">PODCASTS<div class="indicator"></div></li>
 			</ul>
 
 		</nav>
@@ -39,21 +38,33 @@
 		<div class="page" id="radio">
 
 			<div class="player">
-			</div>
+				<audio autoplay src="http://kolektor.se:8000/radiokolektor.mp3" controls></audio>
+			</div><!-- END player -->
+
+			<div class="nextShow">
+				<div class="holder">
+					<div class="left">
+						<h1>NEXT SHOW</h1>
+						<p>Disco Night</p>
+						<span><b>18</b>:45</span>
+					</div>
+					<div class="right">
+					</div>
+				</div>
+			</div><!-- END nextShow -->
 
 			<footer id="metaData">
-
 				<div id="metaText">
+					<p>The Beatles played in yada yada during the yada yada.</p>
 				</div>
-
 				<nav id="metaShare">
 				</nav>
-
-			</footer>
+			</footer><!-- END metaData -->
 
 		</div>
 
 		<!-- BROWSE !-->
+
 		<div class="page" id="podcasts">
 			<nav class="browseNavigation">
 
@@ -69,7 +80,7 @@
 			<div class="wrapper" id="browse">
 
 				<div class="search">
-					<input type="search" class="search" id="search1" placeholder="Search for podcast">
+					<input type="text" class="search" id="search1" placeholder="Search for podcast">
 				</div>
 
 				<article class="featured">
@@ -109,16 +120,8 @@
 			<div class="wrapper" id="searchResults"> 
 
 				<div class="search">
-					<input type="search" class="search" id="search2" placeholder="">
+					<input type="text" class="search" id="search2" placeholder="">
 				</div>
-
-				<div class="searchTitle">
-
-			    	<ul>
-			    		<li></li>
-			    	</ul>		
-
-			    </div>
 
 			    <div class="resultsBoxes">
 				    <!--
@@ -249,6 +252,7 @@
 			</div>
 
 			<!-- VIEW 8 : FEED / PODCAST !-->
+
 			<div class="wrapper" id="feed">
 
 				<div id="goToBackstage">
@@ -274,8 +278,10 @@
 			</div>
 
 			<!-- VIEW 9 : BACKSTAGE / PODCAST !-->
+
 			<div class="wrapper" id="backstage">
-				LIVE!
+				<iframe src="//www.ustream.tv/embed/16660969?wmode=direct" style="position:fixed; left:0px; bottom:0px; right:0px; width:100%; height:90%; border:none; margin:0; padding:0; overflow:hidden; z-index:10;" frameborder="no" value="autoplay=true&">
+				</iframe>
 			</div>
 
 			<!-- VIEW 10: OVERLAY PLAYER !-->
