@@ -1,148 +1,325 @@
-VIEW 1 : RADIO
+<!DOCTYPE html>
+<html>
 
-<div class="wrapper">
+	<head>
 
-	<nav class="navTab">
+		<title>Radio Kolektor - Radio</title>
 
-		<ul>
-			<li></li>
-			<li></li>
-		</ul>
+		<!-- Metas -->
+	    <meta content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" name="viewport" />
+	    <meta charset="utf-8">  
+	    <meta name="apple-mobile-web-app-capable" content="yes" />          
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
 
-	</nav>
+		<!-- Scripts -->
+    	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="ajax.js"></script>
 
-	<div class="player">
-	</div>
+	    <!-- CSS!-->
+	    <link href="css/style.css" rel="stylesheet" media="screen">
 
-	<footer id="metaData">
 
-		<div id="metaText">
-		</div>
+	</head>
 
-		<nav id="metaShare">
+	<body>
+
+		<!-- NAVIGATION !-->
+
+		<nav class="topNavigation">
+
+			<ul>
+				<li id="goToRadio">Radio</li>
+				<li id="goToPodcasts">Podcasts</li>
+			</ul>
+
 		</nav>
 
-	</footer>
+		<!-- VIEW 1 : RADIO !-->
 
-</div>
+		<div class="page" id="radio">
 
+			<div class="player">
+			</div>
 
-VIEW 2 : BROWSE / PODCAST
+			<footer id="metaData">
 
-<div class="wrapper">
+				<div id="metaText">
+				</div>
 
-	<nav class="navTab">
+				<nav id="metaShare">
+				</nav>
 
-		<ul>
-			<li></li>
-			<li></li>
-		</ul>
+			</footer>
 
-	</nav>
+		</div>
 
+		<!-- BROWSE !-->
+		<div class="page" id="podcasts">
+			<nav class="browseNavigation">
 
-	<article class="featured">
+					<ul>
+						<li id="goToFeed">Feed</li>
+						<li id="goToBrowse">Browse</li>
+					</ul>
 
-		<section class="featuredImage">
-		</section>
-		
-		<section class="featuredImage">
-		</section>
-		
-		<section class="featuredImage">
-		</section>
-		
-		<section class="featuredImage">
-		</section>	
+			</nav>
 
-	</article>
+			<!-- VIEW 2 : BROWSE / PODCAST !-->
 
+			<div class="wrapper" id="browse">
 
-	<nav class="podMenu">
+				<div class="search">
+					<input type="search" class="search" id="search1" placeholder="Search for podcast">
+				</div>
 
-		<ul>
-			<li></li>
-			<li></li>
-			<li></li>
-		</ul>
+				<article class="featured">
 
-	</nav>	
+					<section class="featuredImage" id="featured0">
+						<img src="" />
+					</section>
+					
+					<section class="featuredImage" id="featured1">
+						<img src="" />
+					</section>
+					
+					<section class="featuredImage" id="featured2">
+						<img src="" />
+					</section>
+					
+					<section class="featuredImage" id="featured3">
+						<img src="" />
+					</section>	
 
+				</article>
 
-</div>
+				<nav class="podMenu">
 
+					<ul>
+						<li id="goToWizard">Wizard</li>
+						<li id="goToAllCategories">All categories</li>
+					</ul>
 
-VIEW 3 : SEARCH / PODCAST
+				</nav>	
 
-
-<div class="wrapper"> 
-
-	<nav class="navTab">
-
-		<ul>
-			<li></li>
-			<li></li>
-		</ul>
-
-	</nav>
-
-	<div class="searchTitle">
-
-    	<ul>
-    		<li></li>
-    	</ul>		
-
-    </div>
-
-    <div class="podSegment">
-
-    	<div class="PodSegImg">
-    	</div>
-
-    	<div class="PodSegTitle">
-    	</div>
-
-    	<ul>
-    		<li></li>
-    		<li></li>
-    		<li></li>
-    	</ul>
-
-    </div>
-
-</div>
-
-VIEW OVERLAY PLAYER
-
-<div class="OverPlayer">
-
-	<div class="OPimage">
-	</div>
-
-	<div class="OPtitle">
-	</div>
-
-	<div class="OPplaypause">
-	</div>
-
-</div>
+			</div>
 
 
+			<!-- VIEW 3 : SEARCH / PODCAST !-->
 
+			<div class="wrapper" id="searchResults"> 
 
+				<div class="search">
+					<input type="search" class="search" id="search2" placeholder="">
+				</div>
 
+				<div class="searchTitle">
 
+			    	<ul>
+			    		<li></li>
+			    	</ul>		
 
+			    </div>
 
+			    <div class="resultsBoxes">
+				    <!--
+				    <div class="podSegment">
 
+				    	<div class="PodSegImg">
+				    	</div>
 
+				    	<div class="PodSegTitle">
+				    	</div>
 
+				    	<div class="PodSegAuthor">
+				    	</div>
 
+				    	<ul>
+				    		<li class="feeling"></li>
+				    		<li class="mood"></li>
+				    		<li class="lenght"></li>
+				    	</ul>
 
+				    </div>
+					!-->
+				</div>
+			</div>
 
+			<!-- VIEW 4 : WIZARD / PODCAST !-->
 
+			<div class="wrapper" id="wizard"> 
 
+				<ul class="allMoods"></ul>
+				<ul class="allFeelings"></ul>
+				<ul class="allLenght">
+					<li value="60">1 min</li>
+					<li value="300">5 min</li>
+					<li value="600">10 min</li>
+					<li value="1800">30 min</li>
+				</ul>
+			</div>
 
+			<!-- VIEW 5 : WIZARD RESULTS / PODCAST !-->
 
+			<div class="wrapper" id="wizardResults"> 
 
+				<nav class="navTab">
 
+					<ul>
+						<li></li>
+						<li></li>
+					</ul>
+
+				</nav>
+
+				<div class="searchTitle">
+
+			    	<ul>
+			    		<li></li>
+			    	</ul>		
+
+			    </div>
+
+			    <div class="resultsBoxes">
+				    <!--
+				    <div class="podSegment">
+
+				    	<div class="PodSegImg">
+				    	</div>
+
+				    	<div class="PodSegTitle">
+				    	</div>
+
+				    	<div class="PodSegAuthor">
+				    	</div>
+
+				    	<ul>
+				    		<li class="feeling"></li>
+				    		<li class="mood"></li>
+				    		<li class="lenght"></li>
+				    	</ul>
+
+				    </div>
+					!-->
+				</div>
+			</div>
+
+			<!-- VIEW 6 : CATEGORIES / PODCAST !-->
+
+			<div class="wrapper" id="categories"> 
+
+				<ul class="allCategoires"></ul>
+
+			</div>
+
+			<!-- VIEW 7 : CATEGORIES RESULTS / PODCAST !-->
+
+			<div class="wrapper" id="categoriesResults"> 
+
+				<div class="searchTitle">
+
+			    	<ul>
+			    		<li></li>
+			    	</ul>		
+
+			    </div>
+
+			    <div class="resultsBoxes">
+				    <!--
+				    <div class="podSegment">
+
+				    	<div class="PodSegImg">
+				    	</div>
+
+				    	<div class="PodSegTitle">
+				    	</div>
+
+				    	<div class="PodSegAuthor">
+				    	</div>
+
+				    	<ul>
+				    		<li class="feeling"></li>
+				    		<li class="mood"></li>
+				    		<li class="lenght"></li>
+				    	</ul>
+
+				    </div>
+					!-->
+				</div>
+
+			</div>
+
+			<!-- VIEW 8 : FEED / PODCAST !-->
+			<div class="wrapper" id="feed">
+
+				<div id="goToBackstage">
+					<p>Backstage is live!</p>
+				</div>
+
+				<div class="resultsBoxes">
+				    <!--
+				    <div class="podSegment">
+
+				    	<div class="PodSegImg">
+				    	</div>
+
+				    	<div class="content">
+				    	</div>
+
+				    	<div class="time">
+				    	</div>
+
+				    </div>
+					!-->
+				</div>
+			</div>
+
+			<!-- VIEW 9 : BACKSTAGE / PODCAST !-->
+			<div class="wrapper" id="backstage">
+				LIVE!
+			</div>
+
+			<!-- VIEW 10: OVERLAY PLAYER !-->
+
+			<div class="wrapper" id="overPlayer" style="background-color: yellow; heigh:200px; width: 100%;">
+
+				<div class="OPimage">
+				</div>
+
+				<div class="OPtitle">
+				</div>
+
+				<div class="OPplaypause">
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- VIEW 11: PLAYER !-->
+
+		<div class="page" id="player">
+
+			<!-- FOR SHOWIG THE OPLAYER <div><ul><li id="goToOPlayer">Oplayer</li></ul></div>!-->
+
+			<div class="Pimage">
+				<img src="" />
+			</div>
+
+			<div class="Ptitle">
+			</div>
+
+			<div class="Pauthor">
+			</div>
+
+			<div class="Pplaypause">
+			</div>
+			
+			<div class="Pplayer">
+				<audio src="" controls></audio>
+			</div>
+
+		</div>
+
+	</body>
+
+</html>
