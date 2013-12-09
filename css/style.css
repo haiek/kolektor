@@ -487,7 +487,48 @@ input:focus {
 
 	.podSegment{
 		width: 320px;
+		height: 86px;
 		overflow: auto;
+		border-bottom: 1px solid #e5e5e5;
+	}
+
+	.PodSegImg{
+		width: 74px;
+		height: 74px;
+		margin: 6px;
+		float: left;
+	}
+
+	.PodSegImg img{
+		width: 54px;
+		height: 54px;
+	}
+
+	.content{
+		width: 228px;
+		height: 38px;
+		float: left;
+		margin: 15px 0 5px 6px;
+		font-size: 16px;
+	}
+
+	.time{
+		float: left;
+		margin: 0 0 0 6px;
+		font-size: 12px;
+		color: #b9b8b8;
+	}
+
+	#goToBackstage{
+		width: 314px;
+		height: 52px;
+		border: 3px solid #9f0101;
+		background: #c00000;
+		text-align: center;
+		line-height: 52px;
+		font-size: 16px;
+		color: white;
+		font-weight: bold;
 	}
 
 }
