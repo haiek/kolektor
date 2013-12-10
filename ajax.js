@@ -354,7 +354,7 @@ $(document).ready( function(){
 			  	arrayHolder[count] = item;
 
 			  	//Append the results
-			  	$( "#wizardResults .resultsBoxes" ).append( '<div id="wizardResults'+data[key].id+'" class="podSegment"><div class="PodSegImg"><img style="border: 10px solid #' + data[key].category_hex +'" src="'+data[key].cover+'" /></div><div class="PodSegTitle">'+data[key].title+'</div><div class="PodSegAuthor">'+data[key].author+'</div><ul><li class="feeling" style="background-color: #'+ data[key].feeling_hex +'">del</li><li class="mood" style="background-color: #'+ data[key].mood_hex +'">del</li><li class="lenght">'+data[key].lenght+'</li></ul></div>' );
+			  	$( "#wizardResults .resultsBoxes" ).append( '<div id="wizardResults'+data[key].id+'" class="podSegment"><div class="PodSegImg"><img style="border: 5px solid #' + data[key].category_hex +'" src="'+data[key].cover+'" /></div><div class="PodSegTitle">'+data[key].title+'</div><div class="PodSegAuthor">'+data[key].author+'</div><ul><li class="feeling" style="background-color: #'+ data[key].feeling_hex +'">del</li><li class="mood" style="background-color: #'+ data[key].mood_hex +'">del</li><li class="lenght">'+data[key].lenght+'</li></ul></div>' );
 				
 			    count++;
 			}
@@ -481,7 +481,7 @@ $(document).ready( function(){
 			  	arrayHolder[count] = item;
 
 			  	//Append the results
-			  	$( "#categoriesResults .resultsBoxes" ).append( '<div id="categoriesResults'+data[key].id+'" class="podSegment"><div class="PodSegImg"><img style="border: 10px solid #' + data[key].category_hex +'" src="'+data[key].cover+'" /></div><div class="PodSegTitle">'+data[key].title+'</div><div class="PodSegAuthor">'+data[key].author+'</div><ul><li class="feeling" style="background-color: #'+ data[key].feeling_hex +'">del</li><li class="mood" style="background-color: #'+ data[key].mood_hex +'">del</li><li class="lenght">'+data[key].lenght+'</li></ul></div>' );
+			  	$( "#categoriesResults .resultsBoxes" ).append( '<div id="categoriesResults'+data[key].id+'" class="podSegment"><div class="PodSegImg"><img style="border: 5px solid #' + data[key].category_hex +'" src="'+data[key].cover+'" /></div><div class="PodSegTitle">'+data[key].title+'</div><div class="PodSegAuthor">'+data[key].author+'</div><ul><li class="feeling" style="background-color: #'+ data[key].feeling_hex +'">del</li><li class="mood" style="background-color: #'+ data[key].mood_hex +'">del</li><li class="lenght">'+data[key].lenght+'</li></ul></div>' );
 				
 			    count++;
 			}
@@ -560,7 +560,7 @@ $(document).ready( function(){
 			  	arrayHolder[count] = item;
 
 			  	//Change the src path of the image and add the border with the color of the category
-			  	$( "#feed .resultsBoxes" ).append( "<div id='feedResults" + data[key].id + "' class='podSegment'><div class='PodSegImg'><img style='border: 10px solid #" + data[key].category_hex + "' src='" + data[key].cover + "'' /></div><div class='content'>" + data[key].current_views + " are listening to the " + data[key].title + " right now</div><div class='time'>posted 20 seconds ago</div></div>" );
+			  	$( "#feed .resultsBoxes" ).append( "<div id='feedResults" + data[key].id + "' class='podSegment'><div class='PodSegImg'><img style='border: 5px solid #" + data[key].category_hex + "' src='" + data[key].cover + "'' /></div><div class='content'><b>" + data[key].current_views + "</b> are listening to the <b>" + data[key].title + "</b> right now</div><div class='time'>posted 20 seconds ago</div></div>" );
 				
 			    count++;
 			}
@@ -614,13 +614,28 @@ $(document).ready( function(){
 
 	$( "#goToRadio" ).click(function() {
 		$( ".page" ).hide();
-		$( "#radio" ).show();
+		$( "#radio" ).fadeIn(200);
+		$(".indicator").animate({
+            left: "-=141",
+        }, 750);
 	});
 
 	$( "#goToPodcasts" ).click(function() {
 		$( ".page" ).hide();
-		$( "#podcasts" ).show();
+		$( "#podcasts" ).fadeIn(200);
 		showView("browse");
+		$(".indicator").animate({
+            left: "+=141",
+        }, 750);
+        $(".minimizedPlayer").show();
+	});
+
+	$(".minimizedPlayer").click(function(){
+		$("#overPlayer").show();
+		$("#overPlayer").animate({
+            bottom: "+=76",
+        }, 200);
+		$(".minimizedPlayer").fadeOut(200);
 	});
 
 	$( "#goToFeed" ).click(function() {
@@ -671,7 +686,6 @@ $(document).ready( function(){
 	}
 
 	function showPlayer() {
-		$( ".topNavigation" ).hide();
 		$( ".page" ).hide();
 		$( "#player" ).show();
 	}

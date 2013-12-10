@@ -3,13 +3,16 @@
 
 	<head>
 
-		<title>Radio Kolektor - Radio</title>
+		<title>Radio Kolektor</title>
 
 		<!-- Metas -->
 	    <meta content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" name="viewport" />
 	    <meta charset="utf-8">  
 	    <meta name="apple-mobile-web-app-capable" content="yes" />          
 	    <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+
+	    <!-- Apple -->
+	    <link rel="apple-touch-icon" href="apple-icon.png">
 
 		<!-- Scripts -->
     	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -27,9 +30,11 @@
 		<nav class="topNavigation">
 
 			<ul>
-				<li id="goToRadio">RADIO<div class="indicator"></div></li>
-				<li id="goToPodcasts">PODCASTS<div class="indicator"></div></li>
+				<li id="goToRadio">RADIO</li>
+				<li id="goToPodcasts">PODCASTS</li>
 			</ul>
+
+			<div class="indicator"></div>
 
 		</nav>
 
@@ -38,7 +43,7 @@
 		<div class="page" id="radio">
 
 			<div class="player">
-				<audio autoplay src="http://kolektor.se:8000/radiokolektor.mp3" controls></audio>
+				<audio id="radioPlayer" autoplay src="http://kolektor.se:8000/radiokolektor.mp3" controls></audio>
 			</div><!-- END player -->
 
 			<div class="nextShow">
@@ -73,6 +78,8 @@
 						<li id="goToBrowse">Browse</li>
 					</ul>
 
+
+
 			</nav>
 
 			<!-- VIEW 2 : BROWSE / PODCAST !-->
@@ -106,8 +113,8 @@
 				<nav class="podMenu">
 
 					<ul>
-						<li id="goToWizard">Wizard</li>
-						<li id="goToAllCategories">All categories</li>
+						<li id="goToWizard"><img src="http://i.imgur.com/GTtohOT.png" alt=""/>Wizard</li>
+						<li id="goToAllCategories"><img src="http://i.imgur.com/GTtohOT.png" alt=""/>All categories</li>
 					</ul>
 
 				</nav>	
@@ -286,7 +293,13 @@
 
 			<!-- VIEW 10: OVERLAY PLAYER !-->
 
-			<div class="wrapper" id="overPlayer" style="background-color: yellow; heigh:200px; width: 100%;">
+			<div class="minimizedPlayer">
+				<div class="resume">
+					<img src="http://i.imgur.com/Iv2VNA5.png" alt=""/>
+				</div>
+			</div>
+
+			<div class="wrapper" id="overPlayer">
 
 				<div class="OPimage">
 				</div>
@@ -317,11 +330,11 @@
 			<div class="Pauthor">
 			</div>
 
-			<div class="Pplaypause">
-			</div>
-			
-			<div class="Pplayer">
-				<audio src="" controls></audio>
+			<div class="Pdesc">
+				<h3>Description</h3>
+				<p>
+					Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+				</p>
 			</div>
 
 		</div>

@@ -6,6 +6,7 @@ html{
 	margin: 0;
 	padding: 0;
 	font-family: Arial;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body{
@@ -61,7 +62,6 @@ input:focus {
 	/* --- RADIO VIEW --- */
 	.wrapper{
 		width: 320px;
-		height: 460px;
 		background: white;
 	}
 
@@ -197,6 +197,7 @@ input:focus {
 		height: 44px;
 		background: #edb9a2;
 		list-style: none;
+		position: relative;
 	}
 
 	.topNavigation ul{
@@ -224,23 +225,13 @@ input:focus {
 		width: 160px;
 	}
 
-	#goToRadio .indicator{
+	.indicator{
 		width: 142px;
 		height: 6px;
 		background: #ec652a;
 		position: absolute;
 		bottom: 0;
-		right: 0;
-	}
-
-	#goToPodcasts .indicator{
-		width: 142px;
-		height: 6px;
-		background: #ec652a;
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		display: none;
+		margin: 0 0 0 18px;
 	}
 
 	.player{
@@ -401,18 +392,27 @@ input:focus {
 		width: 320px;
 	}
 
+	.podMenu img{
+		width: 12px;
+		margin: 0 8px 0 0;
+	}
+
 	.podMenu ul{
 		width: 320px;
 		list-style: none;
 	}
 
 	.podMenu ul li{
-		width: 288px;
+		width: 283px;
 		height: 23px;
 		line-height: 23px;
 		border-bottom: 1px solid #e5e5e5;
 		padding: 16px;
 		font-size: 16px;
+	}
+
+	#feed{
+		overflow: auto;
 	}
 
 	#wizard{
@@ -492,23 +492,53 @@ input:focus {
 		border-bottom: 1px solid #e5e5e5;
 	}
 
+	.podSegment:nth-child(1){
+		border-top: 1px solid #e5e5e5;
+	}
+
+	.podSegment ul{
+		float: left;
+		list-style: none;
+		margin: 8px 0 0 6px;
+	}
+
+	.podSegment ul li{
+		float: left;
+		margin-right: 10px;
+	}
+
 	.PodSegImg{
-		width: 74px;
-		height: 74px;
-		margin: 6px;
+		width: 72px;
+		height: 72px;
+		margin: 7px;
 		float: left;
 	}
 
 	.PodSegImg img{
-		width: 54px;
-		height: 54px;
+		width: 62px;
+		height: 62px;
+	}
+
+	.PodSegTitle{
+		width: 180px;
+		float: left;
+		font-size: 16px;
+		font-weight: bold;
+		margin: 12px 0 0 6px;
+	}
+
+	.PodSegAuthor{
+		width: 180px;
+		float: left;
+		font-size: 14px;
+		margin: 0 0 0 6px;
+		color: #505050;
 	}
 
 	.content{
-		width: 228px;
-		height: 38px;
+		width: 200px;
 		float: left;
-		margin: 15px 0 5px 6px;
+		margin: 13px 0 5px 6px;
 		font-size: 16px;
 	}
 
@@ -529,6 +559,103 @@ input:focus {
 		font-size: 16px;
 		color: white;
 		font-weight: bold;
+	}
+
+	#player{
+		width: 320px;
+		overflow: auto;
+	}
+
+	.Pimage{
+		width: 320px;
+		height: 320px;
+	}
+
+	.Pimage img{
+		width: 320px;
+	}
+
+	.Ptitle{
+		float: left;
+		font-size: 24px;
+		font-weight: bold;
+		padding: 10px 10px 0 10px;
+	}
+
+	.Pauthor{
+		float: left;
+		clear: both;
+		font-size: 18px;
+		padding: 0 10px 10px 10px;
+	}
+
+	.Pdesc{
+		float: left;
+		width: 300px;
+		padding: 0 10px 10px 10px;
+		background: #d5d5d5;
+		border-top: 1px solid #cfcfcf;
+	}
+
+	.minimizedPlayer{
+		position: fixed;
+		width: 55px;
+		height: 55px;
+		border-radius: 50%;
+		bottom: 10px;
+		right: 10px;
+		background: rgba(0, 0, 0, 0.3);
+		z-index: 50000;
+		display: none;
+	}
+
+	.resume{
+		width: 45px;
+		height: 45px;
+		border-radius: 50%;
+		margin: 5px;
+		background: black;
+	}
+
+	.resume img{
+		width: 21px;
+		margin: 12px;
+	}
+
+	#overPlayer{
+		width: 320px;
+		height: 76px;
+		position: fixed;
+		background: rgba(0, 0, 0, 0.85);
+		bottom: -76px;
+	}
+
+	.OPimage{
+		width: 60px;
+		height: 60px;
+		float: left;
+		background: red;
+		margin: 8px;
+	}
+
+	.OPtitle{
+		float: left;
+		height: 38px;
+		line-height: 38px;
+		color: white;
+	}
+
+	.OPplaypause{
+		float: left;
+		width: 70px;
+		height: 38px;
+		line-height: 38px;
+		background: blue;
+	}
+
+	#search2{
+		border-top: 1px solid #e5e5e5;
+		border-bottom: 1px solid #e5e5e5;
 	}
 
 }
