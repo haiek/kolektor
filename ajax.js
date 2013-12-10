@@ -88,82 +88,93 @@ $(document).ready( function(){
 
 	function getSearchByTitle(userImput) {
 		//Delete previous results
-		$( "#searchResults .resultsBoxes" ).empty();
+		$( "#browse .resultsBoxes" ).empty();
 
-		//Send the name of the function to be called in the handler.php
-		$.post( url, { fun: "getSearchByTitle", imput: userImput}, function( data ) {
+		if(userImput != "") {
+			$( "#browse .featured" ).hide();
+			$( "#browse .podMenu" ).hide();
+			$( "#browse .resultsBoxes" ).show();
 
-			//Create array holder for all items info
-			var arrayHolder = new Array();
-			var key, count = 0;
-			for(key in data) {
 
-				//See what the PHP returns.
-			  	console.log( data[key].id );
-			  	console.log( data[key].title );
-			  	console.log( data[key].author );
-			  	console.log( data[key].category );
-			  	console.log( data[key].mood );
-			  	console.log( data[key].feeling );
-			  	console.log( data[key].lenght );
-			  	console.log( data[key].cover );
-			  	console.log( data[key].audio );
-			  	console.log( data[key].date );
-			  	console.log( data[key].current_views );
-			  	console.log( data[key].category_hex );
-			  	console.log( data[key].feeling_hex );
-			  	console.log( data[key].mood_hex );
+			//Send the name of the function to be called in the handler.php
+			$.post( url, { fun: "getSearchByTitle", imput: userImput}, function( data ) {
 
-			  	//What is gonna be send to the podcast player
-			  	item = new Array();
-			  	item['id'] = data[key].id;
-			  	item['title'] = data[key].title;
-			  	item['author'] = data[key].author;
-			  	item['category'] = data[key].category;
-			  	item['mood'] = data[key].mood;
-			  	item['feeling'] = data[key].feeling;
-			  	item['lenght'] = data[key].lenght;
-			  	item['cover'] = data[key].cover;
-			  	item['audio'] = data[key].audio;
-			  	item['date'] = data[key].date;
-			  	item['current_views'] = data[key].current_views;
-			  	item['category_hex'] = data[key].category_hex;
-			  	item['feeling_hex'] = data[key].feeling_hex;
-			  	item['mood_hex'] = data[key].mood_hex;
-			  	item['count'] = count;
+				//Create array holder for all items info
+				var arrayHolder = new Array();
+				var key, count = 0;
+				for(key in data) {
 
-			  	arrayHolder[count] = item;
+					//See what the PHP returns.
+				  	console.log( data[key].id );
+				  	console.log( data[key].title );
+				  	console.log( data[key].author );
+				  	console.log( data[key].category );
+				  	console.log( data[key].mood );
+				  	console.log( data[key].feeling );
+				  	console.log( data[key].lenght );
+				  	console.log( data[key].cover );
+				  	console.log( data[key].audio );
+				  	console.log( data[key].date );
+				  	console.log( data[key].current_views );
+				  	console.log( data[key].category_hex );
+				  	console.log( data[key].feeling_hex );
+				  	console.log( data[key].mood_hex );
 
-			  	//$( "#search2" ).attr( "placeholder" , userImput );
-			  	$( "#search2" ).attr( "value" , userImput ).focus();
-			  	//Append the results
-			  	$( "#searchResults .resultsBoxes" ).append( '<div id="searchResults'+data[key].id+'" class="podSegment"><div class="PodSegImg"><img style="border: 5px solid #' + data[key].category_hex +'" src="'+data[key].cover+'" /></div><div class="PodSegTitle">'+data[key].title+'</div><div class="PodSegAuthor">'+data[key].author+'</div><ul><li class="feeling" style="background-color: #'+ data[key].feeling_hex +'">del</li><li class="mood" style="background-color: #'+ data[key].mood_hex +'">del</li><li class="lenght">'+data[key].lenght+'</li></ul></div>' );
+				  	//What is gonna be send to the podcast player
+				  	item = new Array();
+				  	item['id'] = data[key].id;
+				  	item['title'] = data[key].title;
+				  	item['author'] = data[key].author;
+				  	item['category'] = data[key].category;
+				  	item['mood'] = data[key].mood;
+				  	item['feeling'] = data[key].feeling;
+				  	item['lenght'] = data[key].lenght;
+				  	item['cover'] = data[key].cover;
+				  	item['audio'] = data[key].audio;
+				  	item['date'] = data[key].date;
+				  	item['current_views'] = data[key].current_views;
+				  	item['category_hex'] = data[key].category_hex;
+				  	item['feeling_hex'] = data[key].feeling_hex;
+				  	item['mood_hex'] = data[key].mood_hex;
+				  	item['count'] = count;
+
+				  	arrayHolder[count] = item;
+
+				  	//$( "#search2" ).attr( "placeholder" , userImput );
+				  	//$( "#search2" ).attr( "value" , userImput ).focus();
+				  	//Append the results
+				  	$( "#browse .resultsBoxes" ).append( '<div id="searchResults'+data[key].id+'" class="podSegment"><div class="PodSegImg"><img style="border: 5px solid #' + data[key].category_hex +'" src="'+data[key].cover+'" /></div><div class="PodSegTitle">'+data[key].title+'</div><div class="PodSegAuthor">'+data[key].author+'</div><ul><li class="feeling" style="background-color: #'+ data[key].feeling_hex +'">del</li><li class="mood" style="background-color: #'+ data[key].mood_hex +'">del</li><li class="lenght">'+data[key].lenght+'</li></ul></div>' );
+					
+				    count++;
+				}
 				
-			    count++;
-			}
-			
-			//Sending the values to the player and overlay player when user press one podcast
-		    $.each(arrayHolder, function(i, val) {
+				//Sending the values to the player and overlay player when user press one podcast
+			    $.each(arrayHolder, function(i, val) {
 
-		    	//Fill the player when you click on the image
-	      		$( "#searchResults" + val['id'] ).click(function() {
-	      				//Filling player view
-				  		$( ".Pauthor" ).html( val['author'] );
-				  		$( ".Ptitle" ).html( val['title'] );
-						$( ".Pimage img" ).attr('src', val['cover'] );
-						$( ".Pplayer audio" ).attr('src', val['audio'] );
+			    	//Fill the player when you click on the image
+		      		$( "#searchResults" + val['id'] ).click(function() {
+		      				//Filling player view
+					  		$( ".Pauthor" ).html( val['author'] );
+					  		$( ".Ptitle" ).html( val['title'] );
+							$( ".Pimage img" ).attr('src', val['cover'] );
+							$( ".Pplayer audio" ).attr('src', val['audio'] );
 
-						//Filling overlay player
-				  		$( ".OPtitle" ).html( val['title'] );
-						$( ".OPimage img" ).attr('src', val['cover'] );
+							//Filling overlay player
+					  		$( ".OPtitle" ).html( val['title'] );
+							$( ".OPimage img" ).attr('src', val['cover'] );
 
-						//Show the player
-						showPlayer();
-	      		});
+							//Show the player
+							showPlayer();
+		      		});
 
-			});
-			
-		}, "json");
+				});
+				
+			}, "json");
+		} else {
+			$( "#browse .resultsBoxes" ).hide();
+			$( "#browse .featured" ).show();
+			$( "#browse .podMenu" ).show();
+		}
 	}
 
 	function getWizard() {
@@ -594,14 +605,6 @@ $(document).ready( function(){
 	$( "#search1" ).keyup(function() {
 		var value = $( this ).val();
 		getSearchByTitle(value);
-		//show the search results view
-		showView("searchResults");
-
-	});
-
-	$( "#search2" ).keyup(function() {
-		var value = $( this ).val();
-		getSearchByTitle(value);
 	});
 
 	$( "#goToWizard" ).click(function() {
@@ -643,6 +646,8 @@ $(document).ready( function(){
 	});
 
 	$( "#goToBrowse" ).click(function() {
+		$( "#search1" ).val( "" );
+		getSearchByTitle("");
 		showView("browse");
 	});
 
@@ -651,9 +656,13 @@ $(document).ready( function(){
 		$( ".topNavigation" ).hide();
 	});
 
-	//WORKING
 	$( "#goToOPlayer" ).click(function() {
 		$( "#overPlayer" ).fadeIn( "slow" );
+	});
+
+	$( "#closePlayer" ).click(function() {
+		$( ".page" ).hide();
+		$( "#podcasts" ).show();
 	});
 
 	//********** SHOW VIEW *********
